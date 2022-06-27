@@ -51,6 +51,7 @@ The first video shows a quick demo of the app's required features. The second de
 ## Credits
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [Parse](https://docs.parseplatform.org/ios/guide/) - backend service
 
 ## Notes
 
