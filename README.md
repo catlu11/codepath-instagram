@@ -2,19 +2,19 @@
 
 **Instagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **-** hours spent in total
+Time spent: **5** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up to create a new account using Parse authentication
-- [ ] User can log in and log out of his or her account
-- [ ] The current signed in user is persisted across app restarts
-- [ ] User can take a photo, add a caption, and post it to "Instagram"
-- [ ] User can view the last 20 posts submitted to "Instagram"
-- [ ] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [ ] User can tap a post to view post details, including timestamp and caption
+- [x] User can sign up to create a new account using Parse authentication
+- [x] User can log in and log out of his or her account
+- [x] The current signed in user is persisted across app restarts
+- [x] User can take a photo, add a caption, and post it to "Instagram"
+- [x] User can view the last 20 posts submitted to "Instagram"
+- [x] User can pull to refresh the last 20 posts submitted to "Instagram"
+- [x] User can tap a post to view post details, including timestamp and caption
 
 The following **optional** features are implemented:
 
@@ -34,8 +34,7 @@ The following **optional** features are implemented:
 - [ ] Implement a custom camera view
 
 The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
+n/a
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -43,6 +42,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 2.
 
 ## Video Walkthrough
+The first video shows a quick demo of the app's required features.
+<p float="left">
+<img src='Demo/instagram1.gif' title='Video Walkthrough' alt='Video Walkthrough' width='200'/> 
+</p>
 
 ## Credits
 
@@ -50,7 +53,6 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Notes
 
-Describe any challenges encountered while building the app.
 
 ## License
 
