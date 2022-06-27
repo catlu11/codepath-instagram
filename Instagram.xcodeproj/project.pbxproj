@@ -21,6 +21,7 @@
 		F055C194286A0BD80037DAB0 /* InstagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C193286A0BD80037DAB0 /* InstagramUITestsLaunchTests.m */; };
 		F055C1A8286A1C1D0037DAB0 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F055C1A7286A1C1D0037DAB0 /* Keys.plist */; };
 		F055C1AB286A228B0037DAB0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1AA286A228B0037DAB0 /* LoginViewController.m */; };
+		F055C1AE286A27900037DAB0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1AD286A27900037DAB0 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		F055C1A7286A1C1D0037DAB0 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		F055C1A9286A228B0037DAB0 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F055C1AA286A228B0037DAB0 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F055C1AC286A27900037DAB0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		F055C1AD286A27900037DAB0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 			children = (
 				F055C1A9286A228B0037DAB0 /* LoginViewController.h */,
 				F055C1AA286A228B0037DAB0 /* LoginViewController.m */,
+				F055C1AC286A27900037DAB0 /* HomeViewController.h */,
+				F055C1AD286A27900037DAB0 /* HomeViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				F055C1AB286A228B0037DAB0 /* LoginViewController.m in Sources */,
 				F055C16D286A0BD70037DAB0 /* AppDelegate.m in Sources */,
 				F055C17E286A0BD70037DAB0 /* main.m in Sources */,
+				F055C1AE286A27900037DAB0 /* HomeViewController.m in Sources */,
 				F055C170286A0BD70037DAB0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
