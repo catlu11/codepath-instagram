@@ -22,6 +22,10 @@
 		F055C1A8286A1C1D0037DAB0 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F055C1A7286A1C1D0037DAB0 /* Keys.plist */; };
 		F055C1AB286A228B0037DAB0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1AA286A228B0037DAB0 /* LoginViewController.m */; };
 		F055C1AE286A27900037DAB0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1AD286A27900037DAB0 /* HomeViewController.m */; };
+		F055C1B4286A2BED0037DAB0 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1B3286A2BED0037DAB0 /* FeedCell.m */; };
+		F055C1BA286A2CAA0037DAB0 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1B9286A2CAA0037DAB0 /* Post.m */; };
+		F055C1BE286A2D1B0037DAB0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1BD286A2D1B0037DAB0 /* User.m */; };
+		F055C1C1286A2FFF0037DAB0 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,14 @@
 		F055C1AA286A228B0037DAB0 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F055C1AC286A27900037DAB0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F055C1AD286A27900037DAB0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F055C1B2286A2BED0037DAB0 /* FeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
+		F055C1B3286A2BED0037DAB0 /* FeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
+		F055C1B8286A2CAA0037DAB0 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		F055C1B9286A2CAA0037DAB0 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		F055C1BC286A2D1B0037DAB0 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F055C1BD286A2D1B0037DAB0 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F055C1BF286A2FFF0037DAB0 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +164,10 @@
 				F055C16B286A0BD70037DAB0 /* AppDelegate.h */,
 				F055C16C286A0BD70037DAB0 /* AppDelegate.m */,
 				F055C16E286A0BD70037DAB0 /* SceneDelegate.h */,
-				F055C16F286A0BD70037DAB0 /* SceneDelegate.m */,
 				F055C1A6286A1B7C0037DAB0 /* View Controllers */,
+				F055C1B5286A2BF20037DAB0 /* Views */,
+				F055C1BB286A2CB10037DAB0 /* Models */,
+				F055C16F286A0BD70037DAB0 /* SceneDelegate.m */,
 				F055C174286A0BD70037DAB0 /* Main.storyboard */,
 				F055C177286A0BD70037DAB0 /* Assets.xcassets */,
 				F055C179286A0BD70037DAB0 /* LaunchScreen.storyboard */,
@@ -188,8 +202,30 @@
 				F055C1AA286A228B0037DAB0 /* LoginViewController.m */,
 				F055C1AC286A27900037DAB0 /* HomeViewController.h */,
 				F055C1AD286A27900037DAB0 /* HomeViewController.m */,
+				F055C1BF286A2FFF0037DAB0 /* ComposeViewController.h */,
+				F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F055C1B5286A2BF20037DAB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F055C1B2286A2BED0037DAB0 /* FeedCell.h */,
+				F055C1B3286A2BED0037DAB0 /* FeedCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F055C1BB286A2CB10037DAB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F055C1B8286A2CAA0037DAB0 /* Post.h */,
+				F055C1B9286A2CAA0037DAB0 /* Post.m */,
+				F055C1BC286A2D1B0037DAB0 /* User.h */,
+				F055C1BD286A2D1B0037DAB0 /* User.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,10 +468,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F055C1AB286A228B0037DAB0 /* LoginViewController.m in Sources */,
+				F055C1BE286A2D1B0037DAB0 /* User.m in Sources */,
+				F055C1C1286A2FFF0037DAB0 /* ComposeViewController.m in Sources */,
+				F055C1B4286A2BED0037DAB0 /* FeedCell.m in Sources */,
 				F055C16D286A0BD70037DAB0 /* AppDelegate.m in Sources */,
 				F055C17E286A0BD70037DAB0 /* main.m in Sources */,
 				F055C1AE286A27900037DAB0 /* HomeViewController.m in Sources */,
 				F055C170286A0BD70037DAB0 /* SceneDelegate.m in Sources */,
+				F055C1BA286A2CAA0037DAB0 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
