@@ -11,8 +11,9 @@
 @property (nonatomic, strong) PFFileObject *image;
 @property (nonatomic, strong) NSNumber *likeCount;
 @property (nonatomic, strong) NSNumber *commentCount;
+@property (nonatomic, strong) NSDate *timestamp;
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
-+ (Post *) postFromDictionary:(NSDictionary *)dict;
++ (Post *) postFromPFObject:(PFObject *)obj;
 
 @end

@@ -12,18 +12,20 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic timestamp;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
 
-+ (Post *) postFromDictionary:(NSDictionary *)dict {
++ (Post *) postFromPFObject:(PFObject *)obj {
     Post *newPost = [Post new];
-    newPost.image = dict[@"image"];
-    newPost.author = dict[@"author"];
-    newPost.caption = dict[@"caption"];
-    newPost.likeCount = dict[@"likeCount"];
-    newPost.commentCount = dict[@"commentCount"];
+    newPost.image = obj[@"image"];
+    newPost.author = obj[@"author"];
+    newPost.caption = obj[@"caption"];
+    newPost.likeCount = obj[@"likeCount"];
+    newPost.commentCount = obj[@"commentCount"];
+    newPost.timestamp = obj.createdAt;
     return newPost;
 }
 

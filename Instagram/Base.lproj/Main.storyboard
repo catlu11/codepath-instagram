@@ -151,6 +151,7 @@
                                                 <constraint firstItem="NDa-Ye-RyA" firstAttribute="leading" secondItem="pte-CA-Vx6" secondAttribute="leading" constant="8" id="HTb-Q1-tGQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="NDa-Ye-RyA" secondAttribute="trailing" constant="8" id="MaD-Jq-gr8"/>
                                                 <constraint firstItem="NDa-Ye-RyA" firstAttribute="top" secondItem="dGr-Tc-2dD" secondAttribute="bottom" constant="8" id="PhL-tK-WIx"/>
+                                                <constraint firstAttribute="trailing" secondItem="dGr-Tc-2dD" secondAttribute="trailing" id="SIR-Hc-qAS"/>
                                                 <constraint firstItem="dGr-Tc-2dD" firstAttribute="top" secondItem="pte-CA-Vx6" secondAttribute="top" id="gO0-e9-M94"/>
                                                 <constraint firstItem="dGr-Tc-2dD" firstAttribute="leading" secondItem="pte-CA-Vx6" secondAttribute="leading" id="mJa-2c-IVF"/>
                                             </constraints>
@@ -204,6 +205,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnL-zi-0jV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356.52173913043481" y="852.45535714285711"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="TzM-Mo-8sW">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="vZY-Go-HWw" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gX1-su-wIZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u4I-py-glN">
+                                <rect key="frame" x="0.0" y="157" width="414" height="414"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-LI-zMQ">
+                                <rect key="frame" x="8" y="52" width="86" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM/YY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-aT-9tL">
+                                <rect key="frame" x="350" y="52.5" width="56" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNN-be-dAh">
+                                <rect key="frame" x="8" y="114" width="107" height="31"/>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title="likeCount"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1C-lu-8Ie">
+                                <rect key="frame" x="123" y="114" width="156" height="31"/>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="text.bubble" catalog="system" title="commentsCount"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVI-fc-lvb">
+                                <rect key="frame" x="8" y="81.5" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vhj-B1-y3I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FNN-be-dAh" firstAttribute="top" secondItem="rVI-fc-lvb" secondAttribute="bottom" constant="12" id="30c-sB-m5G"/>
+                            <constraint firstItem="u4I-py-glN" firstAttribute="top" secondItem="FNN-be-dAh" secondAttribute="bottom" constant="12" id="5So-33-O7G"/>
+                            <constraint firstItem="v8V-LI-zMQ" firstAttribute="top" secondItem="vhj-B1-y3I" secondAttribute="top" constant="8" id="78F-fC-QM6"/>
+                            <constraint firstItem="u4I-py-glN" firstAttribute="height" secondItem="vhj-B1-y3I" secondAttribute="height" multiplier="0.506112" id="9LE-oM-F2l"/>
+                            <constraint firstItem="rVI-fc-lvb" firstAttribute="trailing" secondItem="nb3-aT-9tL" secondAttribute="trailing" id="AGZ-0r-tc7"/>
+                            <constraint firstItem="v8V-LI-zMQ" firstAttribute="leading" secondItem="vhj-B1-y3I" secondAttribute="leading" constant="8" id="EBt-vb-jfx"/>
+                            <constraint firstItem="vhj-B1-y3I" firstAttribute="trailing" secondItem="u4I-py-glN" secondAttribute="trailing" id="FPe-fx-blL"/>
+                            <constraint firstItem="vhj-B1-y3I" firstAttribute="trailing" secondItem="nb3-aT-9tL" secondAttribute="trailing" constant="8" id="LWp-XZ-yXc"/>
+                            <constraint firstItem="rVI-fc-lvb" firstAttribute="leading" secondItem="v8V-LI-zMQ" secondAttribute="leading" id="PHc-QE-12w"/>
+                            <constraint firstItem="nb3-aT-9tL" firstAttribute="centerY" secondItem="v8V-LI-zMQ" secondAttribute="centerY" id="Th6-2C-v5h"/>
+                            <constraint firstItem="rVI-fc-lvb" firstAttribute="top" secondItem="v8V-LI-zMQ" secondAttribute="bottom" constant="8" id="U4t-tU-Nng"/>
+                            <constraint firstItem="z1C-lu-8Ie" firstAttribute="centerY" secondItem="FNN-be-dAh" secondAttribute="centerY" id="UZH-lg-p53"/>
+                            <constraint firstItem="u4I-py-glN" firstAttribute="width" secondItem="gX1-su-wIZ" secondAttribute="width" id="Ura-LH-NZy"/>
+                            <constraint firstItem="u4I-py-glN" firstAttribute="leading" secondItem="vhj-B1-y3I" secondAttribute="leading" id="X2b-CQ-fIC"/>
+                            <constraint firstItem="u4I-py-glN" firstAttribute="width" secondItem="u4I-py-glN" secondAttribute="height" multiplier="1:1" id="bO0-em-T4G"/>
+                            <constraint firstItem="z1C-lu-8Ie" firstAttribute="leading" secondItem="FNN-be-dAh" secondAttribute="trailing" constant="8" id="n4X-42-2n0"/>
+                            <constraint firstItem="FNN-be-dAh" firstAttribute="leading" secondItem="rVI-fc-lvb" secondAttribute="leading" id="npN-K0-XXb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="VOj-8h-e0j"/>
+                    <connections>
+                        <outlet property="captionTextView" destination="rVI-fc-lvb" id="WAl-mW-aSM"/>
+                        <outlet property="commentButton" destination="z1C-lu-8Ie" id="dUU-en-ZKG"/>
+                        <outlet property="likeButton" destination="FNN-be-dAh" id="Mb0-v5-sby"/>
+                        <outlet property="postImageView" destination="u4I-py-glN" id="OcP-6N-JiJ"/>
+                        <outlet property="timestampLabel" destination="nb3-aT-9tL" id="MKw-PJ-yBn"/>
+                        <outlet property="usernameLabel" destination="v8V-LI-zMQ" id="Dbf-bS-DCW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CcA-eX-yBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="1544"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dKx-P7-rSd">
@@ -317,9 +396,11 @@
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

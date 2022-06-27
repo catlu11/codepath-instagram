@@ -26,6 +26,7 @@
 		F055C1BA286A2CAA0037DAB0 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1B9286A2CAA0037DAB0 /* Post.m */; };
 		F055C1BE286A2D1B0037DAB0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1BD286A2D1B0037DAB0 /* User.m */; };
 		F055C1C1286A2FFF0037DAB0 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */; };
+		F055C1C4286A580E0037DAB0 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1C3286A580E0037DAB0 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		F055C1BD286A2D1B0037DAB0 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F055C1BF286A2FFF0037DAB0 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		F055C1C2286A580E0037DAB0 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		F055C1C3286A580E0037DAB0 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 				F055C1AD286A27900037DAB0 /* HomeViewController.m */,
 				F055C1BF286A2FFF0037DAB0 /* ComposeViewController.h */,
 				F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */,
+				F055C1C2286A580E0037DAB0 /* DetailsViewController.h */,
+				F055C1C3286A580E0037DAB0 /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F055C1AB286A228B0037DAB0 /* LoginViewController.m in Sources */,
+				F055C1C4286A580E0037DAB0 /* DetailsViewController.m in Sources */,
 				F055C1BE286A2D1B0037DAB0 /* User.m in Sources */,
 				F055C1C1286A2FFF0037DAB0 /* ComposeViewController.m in Sources */,
 				F055C1B4286A2BED0037DAB0 /* FeedCell.m in Sources */,

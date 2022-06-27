@@ -9,20 +9,30 @@
 #import "HomeViewController.h"
 #import "LoginViewController.h"
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
 #import "FeedCell.h"
 #import "Parse/Parse.h"
 
-@interface HomeViewController () <UITableViewDataSource, ComposeViewControllerDelegate>
+@interface HomeViewController () <UITableViewDataSource, ComposeViewControllerDelegate, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.feedTableView.dataSource = self;
+    self.feedTableView.delegate = self;
     self.feedTableView.rowHeight = UITableViewAutomaticDimension;
+    
+    // Refresh setup
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.feedTableView insertSubview:self.refreshControl atIndex:0];
+    
     [self fetchPosts];
 }
 
@@ -30,6 +40,10 @@
     UINavigationController *navigationController = [segue destinationViewController];
     ComposeViewController *rootController = navigationController.viewControllers[0];
     rootController.delegate = self;
+}
+
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self fetchPosts];
 }
 
 - (void)didPost {
@@ -43,6 +57,7 @@
     [query includeKey:@"caption"];
     [query includeKey:@"likeCount"];
     [query includeKey:@"commentCount"];
+    [query includeKey:@"createdAt"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
 
@@ -51,6 +66,7 @@
         if (posts != nil) {
             self.arrayOfPosts = posts;
             [self.feedTableView reloadData];
+            [self.refreshControl endRefreshing];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -70,13 +86,20 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell" forIndexPath:indexPath];
-    cell.post = [Post postFromDictionary:self.arrayOfPosts[indexPath.row]];
+    cell.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
     [cell updateUI];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UINavigationController *navigationController = self.navigationController;
+    DetailsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+    viewController.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
+    [navigationController pushViewController: viewController animated:YES];
 }
 
 @end
