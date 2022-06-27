@@ -6,6 +6,7 @@
 //
 
 #import "FeedCell.h"
+#import "Post.h"
 
 @implementation FeedCell
 
@@ -18,6 +19,15 @@
 }
 
 - (void) updateUI {
-    // Set UI elements
+    self.captionLabel.text = self.postDict[@"caption"];
+    PFFileObject *imageData = self.postDict[@"image"];
+    [imageData getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if(data) {
+            self.postImageView.image = [UIImage imageWithData:data];
+        }
+        else {
+            NSLog(@"bad image");
+        }
+    }];
 }
 @end

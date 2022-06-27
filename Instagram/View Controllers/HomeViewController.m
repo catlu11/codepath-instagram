@@ -21,6 +21,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.feedTableView.dataSource = self;
+    self.feedTableView.rowHeight = UITableViewAutomaticDimension;
+    [self fetchPosts];
+}
+
+- (void) fetchPosts {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey:@"image"];
+    [query includeKey:@"author"];
+    [query includeKey:@"caption"];
+    [query includeKey:@"likeCount"];
+    [query includeKey:@"commentCount"];
+    [query orderByDescending:@"createdAt"];
+    query.limit = 20;
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.arrayOfPosts = posts;
+            [self.feedTableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 - (IBAction)logoutUser:(id)sender {
@@ -36,7 +59,8 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell" forIndexPath:indexPath];
-    cell.post = self.arrayOfPosts[indexPath.row];
+    cell.postDict = self.arrayOfPosts[indexPath.row];
+    [cell updateUI];
     return cell;
 }
 
