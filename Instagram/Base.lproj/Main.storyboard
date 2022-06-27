@@ -53,6 +53,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SS9-bU-Wa2" firstAttribute="top" secondItem="wTz-jU-CGI" secondAttribute="bottom" constant="55" id="5kp-PJ-DEu"/>
                             <constraint firstItem="RNe-Mf-V9d" firstAttribute="top" secondItem="5Ol-q4-Hgt" secondAttribute="bottom" constant="19" id="5nr-Bf-N5Y"/>
@@ -67,6 +68,9 @@
                             <constraint firstItem="5Ol-q4-Hgt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qyX-p4-LNX"/>
                             <constraint firstItem="SS9-bU-Wa2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yAN-xO-rvG"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9bx-DG-NEY" appends="YES" id="P2l-Mn-4wv"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="5Ol-q4-Hgt" id="obe-Gi-qYs"/>
@@ -75,6 +79,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9bx-DG-NEY">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="HeQ-J7-JhM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-13.043478260869566" y="78.348214285714278"/>
         </scene>
@@ -366,10 +375,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="67r-y4-98E" eventType="touchUpInside" id="2Oi-Ld-XYq"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="cancelAction:" destination="67r-y4-98E" id="v4g-6I-Epq"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="b8s-qY-kPI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="aMZ-0J-afW">

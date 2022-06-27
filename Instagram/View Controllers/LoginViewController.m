@@ -69,4 +69,9 @@
     }];
 }
 
+- (IBAction)didTap:(id)sender {
+    [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+}
+
 @end
