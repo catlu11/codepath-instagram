@@ -42,9 +42,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 2.
 
 ## Video Walkthrough
-The first video shows a quick demo of the app's required features.
+The first video shows a quick demo of the app's required features. The second demonstrates user persistence after app restarts.
 <p float="left">
-<img src='Demo/instagram1.gif' title='Video Walkthrough' alt='Video Walkthrough' width='200'/> 
+<img src='Demo/instagram1.gif' title='Video Walkthrough' alt='Video Walkthrough' width='200'/>
+<img src='Demo/instagram2.gif' title='Persistence Walkthrough' alt='Persistence Walkthrough' width='200'/> 
 </p>
 
 ## Credits
