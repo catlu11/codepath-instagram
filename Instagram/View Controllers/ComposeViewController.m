@@ -8,7 +8,7 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 
-@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreviewView;
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 @property (strong, nonatomic) UIImagePickerController *imagePickerVC;
@@ -23,6 +23,11 @@
     self.imagePickerVC = [UIImagePickerController new];
     self.imagePickerVC.delegate = self;
     self.imagePickerVC.allowsEditing = YES;
+    
+    self.captionTextView.delegate = self;
+    [[self.captionTextView layer] setBorderColor:[[UIColor blackColor] CGColor]];
+    [[self.captionTextView layer] setBorderWidth:0.5];
+    [[self.captionTextView layer] setCornerRadius: self.captionTextView.frame.size.width*0.05];
 }
 
 - (IBAction)selectFromCamera:(id)sender {
@@ -73,6 +78,7 @@
         [Post postUserImage:img withCaption:caption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if(succeeded) {
                 NSLog(@"Successfully posted to Instagram");
+                [self.delegate didPost];
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
             else {
@@ -83,6 +89,11 @@
 }
 
 - (IBAction)cancelAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    self.captionTextView.text = @"";
 }
 
 @end

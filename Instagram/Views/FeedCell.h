@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FeedCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (strong, nonatomic) NSDictionary *postDict;
+@property (strong, nonatomic) Post *post;
 -(void) updateUI;
 @end
 

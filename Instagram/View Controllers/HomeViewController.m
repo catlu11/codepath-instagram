@@ -8,12 +8,13 @@
 #import "SceneDelegate.h"
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "ComposeViewController.h"
 #import "FeedCell.h"
 #import "Parse/Parse.h"
 
-@interface HomeViewController () <UITableViewDataSource>
+@interface HomeViewController () <UITableViewDataSource, ComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
-@property (strong, nonatomic) NSArray *arrayOfPosts;
+@property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 @end
 
 @implementation HomeViewController
@@ -22,6 +23,16 @@
     [super viewDidLoad];
     self.feedTableView.dataSource = self;
     self.feedTableView.rowHeight = UITableViewAutomaticDimension;
+    [self fetchPosts];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UINavigationController *navigationController = [segue destinationViewController];
+    ComposeViewController *rootController = navigationController.viewControllers[0];
+    rootController.delegate = self;
+}
+
+- (void)didPost {
     [self fetchPosts];
 }
 
@@ -59,7 +70,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell" forIndexPath:indexPath];
-    cell.postDict = self.arrayOfPosts[indexPath.row];
+    cell.post = [Post postFromDictionary:self.arrayOfPosts[indexPath.row]];
     [cell updateUI];
     return cell;
 }

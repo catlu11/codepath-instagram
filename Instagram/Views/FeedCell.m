@@ -19,8 +19,8 @@
 }
 
 - (void) updateUI {
-    self.captionLabel.text = self.postDict[@"caption"];
-    PFFileObject *imageData = self.postDict[@"image"];
+    self.captionLabel.text = self.post.caption;
+    PFFileObject *imageData = self.post.image;
     [imageData getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if(data) {
             self.postImageView.image = [UIImage imageWithData:data];

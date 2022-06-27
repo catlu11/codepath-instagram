@@ -17,6 +17,16 @@
     return @"Post";
 }
 
++ (Post *) postFromDictionary:(NSDictionary *)dict {
+    Post *newPost = [Post new];
+    newPost.image = dict[@"image"];
+    newPost.author = dict[@"author"];
+    newPost.caption = dict[@"caption"];
+    newPost.likeCount = dict[@"likeCount"];
+    newPost.commentCount = dict[@"commentCount"];
+    return newPost;
+}
+
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];

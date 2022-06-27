@@ -192,7 +192,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn"/>
                                 <connections>
-                                    <segue destination="vjl-4O-HJo" kind="presentation" id="0En-RY-EcM"/>
+                                    <segue destination="vjl-4O-HJo" kind="presentation" id="zNE-R5-eyT"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -229,33 +229,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Rxd-F1-Ujt">
-                                <rect key="frame" x="20" y="104" width="153" height="143"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Rxd-F1-Ujt">
+                                <rect key="frame" x="20" y="104" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="0cf-Vo-zze"/>
                                     <constraint firstAttribute="width" constant="150" id="ec9-LF-hp0"/>
+                                    <constraint firstAttribute="width" secondItem="Rxd-F1-Ujt" secondAttribute="height" multiplier="1:1" id="z9J-EU-Jny"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-eN-iOf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-eN-iOf">
                                 <rect key="frame" x="181" y="104" width="213" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDy-NF-ZU3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDy-NF-ZU3">
                                 <rect key="frame" x="20" y="255" width="153" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" image="camera" catalog="system" title="Camera"/>
                                 <connections>
                                     <action selector="selectFromCamera:" destination="67r-y4-98E" eventType="touchUpInside" id="66h-i7-hnR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8L-By-btu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8L-By-btu">
                                 <rect key="frame" x="20" y="287" width="153" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" image="photo.artframe" catalog="system" title="Photo Library"/>
                                 <connections>
@@ -265,6 +263,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ioo-eT-8Ay"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pP0-eN-iOf" firstAttribute="height" secondItem="Ioo-eT-8Ay" secondAttribute="height" multiplier="0.272265" id="C64-DE-nQU"/>
+                            <constraint firstItem="cDy-NF-ZU3" firstAttribute="leading" secondItem="Rxd-F1-Ujt" secondAttribute="leading" id="Dxr-mO-lJA"/>
+                            <constraint firstItem="Z8L-By-btu" firstAttribute="top" secondItem="cDy-NF-ZU3" secondAttribute="bottom" constant="1" id="Dzr-KC-Z8c"/>
+                            <constraint firstItem="pP0-eN-iOf" firstAttribute="leading" secondItem="Rxd-F1-Ujt" secondAttribute="trailing" constant="11" id="K90-Rq-5aK"/>
+                            <constraint firstItem="cDy-NF-ZU3" firstAttribute="top" secondItem="Rxd-F1-Ujt" secondAttribute="bottom" constant="1" id="QS9-Me-eQ9"/>
+                            <constraint firstItem="Z8L-By-btu" firstAttribute="width" secondItem="cDy-NF-ZU3" secondAttribute="width" id="Ri1-pZ-cDY"/>
+                            <constraint firstItem="Rxd-F1-Ujt" firstAttribute="width" secondItem="Ioo-eT-8Ay" secondAttribute="width" multiplier="0.362319" id="UZ6-k0-Kk1"/>
+                            <constraint firstItem="cDy-NF-ZU3" firstAttribute="width" secondItem="Rxd-F1-Ujt" secondAttribute="width" multiplier="1.02" id="Vcp-ke-3ck"/>
+                            <constraint firstItem="Ioo-eT-8Ay" firstAttribute="trailing" secondItem="pP0-eN-iOf" secondAttribute="trailing" constant="20" id="XUI-3R-W7n"/>
+                            <constraint firstItem="Rxd-F1-Ujt" firstAttribute="leading" secondItem="Ioo-eT-8Ay" secondAttribute="leading" constant="20" id="aGi-zz-t7p"/>
+                            <constraint firstItem="pP0-eN-iOf" firstAttribute="top" secondItem="Rxd-F1-Ujt" secondAttribute="top" id="geB-sz-f8i"/>
+                            <constraint firstItem="pP0-eN-iOf" firstAttribute="width" secondItem="Ioo-eT-8Ay" secondAttribute="width" multiplier="0.514493" id="q8T-nc-gFE"/>
+                            <constraint firstItem="Z8L-By-btu" firstAttribute="leading" secondItem="cDy-NF-ZU3" secondAttribute="leading" id="t8z-ul-C8Z"/>
+                            <constraint firstItem="Rxd-F1-Ujt" firstAttribute="top" secondItem="Ioo-eT-8Ay" secondAttribute="top" constant="48" id="uN7-kJ-QvW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Compose" id="sLk-6G-P5D">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="iAk-X7-icT">
