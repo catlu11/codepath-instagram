@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
+#import "DetailsView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewController : UIViewController
-@property (strong, nonatomic) Post *post;
+@property (strong, nonatomic) IBOutlet DetailsView *postDetailsView;
 @end
 
 NS_ASSUME_NONNULL_END

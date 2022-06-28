@@ -6,14 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
+#import "DetailsView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FeedCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *postImageView;
-@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (strong, nonatomic) Post *post;
+@property (weak, nonatomic) IBOutlet DetailsView *postDetailsView;
 -(void) updateUI;
 @end
 

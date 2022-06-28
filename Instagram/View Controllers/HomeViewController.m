@@ -12,6 +12,7 @@
 #import "DetailsViewController.h"
 #import "FeedCell.h"
 #import "Parse/Parse.h"
+#import "Post.h"
 
 @interface HomeViewController () <UITableViewDataSource, ComposeViewControllerDelegate, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
@@ -86,7 +87,8 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell" forIndexPath:indexPath];
-    cell.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
+    cell.postDetailsView.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
+    NSLog(@"%@", cell.postDetailsView.post);
     [cell updateUI];
     return cell;
 }
@@ -98,7 +100,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UINavigationController *navigationController = self.navigationController;
     DetailsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-    viewController.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
+    viewController.view;
+    viewController.postDetailsView.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
+    [viewController.postDetailsView updateUIWithDetails];
     [navigationController pushViewController: viewController animated:YES];
 }
 
