@@ -79,12 +79,13 @@
             if(succeeded) {
                 NSLog(@"Successfully posted to Instagram");
                 [self.delegate didPost];
-                [self dismissViewControllerAnimated:YES completion:nil];
             }
             else {
                 NSLog(@"Error in posting");
             }
         }];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

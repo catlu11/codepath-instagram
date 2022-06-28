@@ -29,7 +29,7 @@
 }
 
 - (void)didPost {
-    [self fetchPosts];
+    [self fetchPosts:NO];
 }
 
 - (IBAction)logoutUser:(id)sender {

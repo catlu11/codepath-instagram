@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FeedTableViewController : UIViewController
--(void)fetchPosts;
+-(void)fetchPosts:(BOOL *)isMore;
 @end
 
 NS_ASSUME_NONNULL_END
