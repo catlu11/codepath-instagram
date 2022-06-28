@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "LoginViewController.h"
 #import "ComposeViewController.h"
+#import "Parse/Parse.h"
 
 @interface HomeViewController () <ComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;

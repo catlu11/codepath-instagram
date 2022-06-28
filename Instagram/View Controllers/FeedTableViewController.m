@@ -42,6 +42,9 @@
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"createdAt < %@", lastPost.createdAt];
         query = [PFQuery queryWithClassName:@"Post" predicate:predicate];
     }
+    if (self.forUser) {
+        [query whereKey:@"author" equalTo:self.forUser];
+    }
     [query includeKey:@"image"];
     [query includeKey:@"author"];
     [query includeKey:@"caption"];

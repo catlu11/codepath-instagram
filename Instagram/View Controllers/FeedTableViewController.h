@@ -6,10 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FeedTableViewController : UIViewController
+@property (strong, nonatomic) PFUser *forUser;
 -(void)fetchPosts:(BOOL *)isMore;
 @end
 
