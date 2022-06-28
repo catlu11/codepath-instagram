@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeedTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : FeedTableViewController
 
 @end
 

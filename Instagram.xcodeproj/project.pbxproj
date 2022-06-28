@@ -28,6 +28,7 @@
 		F055C1C1286A2FFF0037DAB0 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */; };
 		F055C1C4286A580E0037DAB0 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1C3286A580E0037DAB0 /* DetailsViewController.m */; };
 		F055C1C7286B5CB40037DAB0 /* DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1C6286B5CB40037DAB0 /* DetailsView.m */; };
+		F055C1CD286B7E030037DAB0 /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1CC286B7E030037DAB0 /* FeedTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		F055C1C3286A580E0037DAB0 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		F055C1C5286B5CB40037DAB0 /* DetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsView.h; sourceTree = "<group>"; };
 		F055C1C6286B5CB40037DAB0 /* DetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsView.m; sourceTree = "<group>"; };
+		F055C1CB286B7E030037DAB0 /* FeedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
+		F055C1CC286B7E030037DAB0 /* FeedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 				F055C1C0286A2FFF0037DAB0 /* ComposeViewController.m */,
 				F055C1C2286A580E0037DAB0 /* DetailsViewController.h */,
 				F055C1C3286A580E0037DAB0 /* DetailsViewController.m */,
+				F055C1CB286B7E030037DAB0 /* FeedTableViewController.h */,
+				F055C1CC286B7E030037DAB0 /* FeedTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				F055C170286A0BD70037DAB0 /* SceneDelegate.m in Sources */,
 				F055C1C7286B5CB40037DAB0 /* DetailsView.m in Sources */,
 				F055C1BA286A2CAA0037DAB0 /* Post.m in Sources */,
+				F055C1CD286B7E030037DAB0 /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

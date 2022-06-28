@@ -222,7 +222,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="feedTableView" destination="CZT-5S-5tW" id="v60-0H-O0K"/>
+                        <outlet property="feedTableView" destination="CZT-5S-5tW" id="OG5-8L-b7g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnL-zi-0jV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
