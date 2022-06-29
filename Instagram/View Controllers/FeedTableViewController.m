@@ -26,6 +26,8 @@
     self.feedTableView.delegate = self;
     self.feedTableView.rowHeight = UITableViewAutomaticDimension;
     
+    [self.feedTableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"FeedHeaderView"];
+
     // Refresh setup
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -88,11 +90,11 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell" forIndexPath:indexPath];
-    cell.postDetailsView.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
+    cell.postDetailsView.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.section]];
     [cell updateUI];
     
     // If bottom, start infinite scrolling
-    if(indexPath.row == self.arrayOfPosts.count - 1 && self.arrayOfPosts.count >= 20 && self.arrayOfPosts.count < self.numPostsTotal) {
+    if(indexPath.section == self.arrayOfPosts.count - 1 && self.arrayOfPosts.count >= 20 && self.arrayOfPosts.count < self.numPostsTotal) {
         [self fetchPosts:YES];
     }
     
@@ -100,16 +102,41 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+-
+(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.arrayOfPosts.count;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"FeedHeaderView"];
+    Post *post = [Post postFromPFObject:self.arrayOfPosts[section]];
+                  
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd MMM yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:post.timestamp];
+    
+    NSString *userString = [post.author.username stringByAppendingString:@" - "];
+    
+    [header.textLabel setNumberOfLines:0];
+    [header.textLabel setLineBreakMode:NSLineBreakByWordWrapping];
+    header.textLabel.text = [userString stringByAppendingString:stringFromDate];
+    
+    return header;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UINavigationController *navigationController = self.navigationController;
     DetailsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
     viewController.view;
-    viewController.postDetailsView.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.row]];
+    viewController.postDetailsView.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.section]];
     [viewController.postDetailsView updateUIWithDetails];
     [navigationController pushViewController: viewController animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return UITableViewAutomaticDimension;
 }
 
 @end
