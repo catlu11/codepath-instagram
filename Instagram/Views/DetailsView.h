@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) Post *post;
+@property (strong, nonatomic) PFObject *pfPost;
 - (void) updateUIWithDetails;
 - (void) updateUIBasic;
 @end

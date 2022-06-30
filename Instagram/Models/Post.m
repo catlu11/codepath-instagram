@@ -38,7 +38,18 @@
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
-    [newPost saveInBackgroundWithBlock: completion];
+    [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded) {
+            PFObject *postLikes = [PFObject objectWithClassName:@"Likes"];
+            [postLikes setObject:newPost forKey:@"PostPointer"];
+            [postLikes saveInBackground];
+            completion(succeeded, nil);
+        }
+        else {
+            completion(nil, error);
+        }
+    }];
+
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {

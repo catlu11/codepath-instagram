@@ -152,6 +152,7 @@
     DetailsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
     viewController.view;
     viewController.postDetailsView.post = [Post postFromPFObject:self.arrayOfPosts[indexPath.section]];
+    viewController.postDetailsView.pfPost = self.arrayOfPosts[indexPath.section];
     [viewController.postDetailsView updateUIWithDetails];
     [navigationController pushViewController: viewController animated:YES];
 }

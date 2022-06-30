@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.postDetailsView updateUIWithDetails];
+//    [self.postDetailsView updateUIWithDetails];
     
     UITapGestureRecognizer *profileTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapUsername:)];
     [self.postDetailsView.usernameLabel addGestureRecognizer:profileTapGesture];
