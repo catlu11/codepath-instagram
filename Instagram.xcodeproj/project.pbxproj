@@ -30,6 +30,8 @@
 		F055C1C7286B5CB40037DAB0 /* DetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1C6286B5CB40037DAB0 /* DetailsView.m */; };
 		F055C1CD286B7E030037DAB0 /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1CC286B7E030037DAB0 /* FeedTableViewController.m */; };
 		F055C1D0286BB6990037DAB0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1CF286BB6990037DAB0 /* ProfileViewController.m */; };
+		F055C1DE286D147B0037DAB0 /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F055C1DD286D147B0037DAB0 /* FeedHeaderView.xib */; };
+		F055C1E1286D15C70037DAB0 /* FeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F055C1E0286D15C70037DAB0 /* FeedHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,9 @@
 		F055C1CC286B7E030037DAB0 /* FeedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
 		F055C1CE286BB6990037DAB0 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		F055C1CF286BB6990037DAB0 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		F055C1DD286D147B0037DAB0 /* FeedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FeedHeaderView.xib; path = Instagram/Views/FeedHeaderView.xib; sourceTree = SOURCE_ROOT; };
+		F055C1DF286D15C70037DAB0 /* FeedHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedHeaderView.h; sourceTree = "<group>"; };
+		F055C1E0286D15C70037DAB0 /* FeedHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +238,9 @@
 				F055C1B3286A2BED0037DAB0 /* FeedCell.m */,
 				F055C1C5286B5CB40037DAB0 /* DetailsView.h */,
 				F055C1C6286B5CB40037DAB0 /* DetailsView.m */,
+				F055C1DD286D147B0037DAB0 /* FeedHeaderView.xib */,
+				F055C1DF286D15C70037DAB0 /* FeedHeaderView.h */,
+				F055C1E0286D15C70037DAB0 /* FeedHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,6 +366,7 @@
 			files = (
 				F055C1A8286A1C1D0037DAB0 /* Keys.plist in Resources */,
 				F055C17B286A0BD70037DAB0 /* LaunchScreen.storyboard in Resources */,
+				F055C1DE286D147B0037DAB0 /* FeedHeaderView.xib in Resources */,
 				F055C178286A0BD70037DAB0 /* Assets.xcassets in Resources */,
 				F055C176286A0BD70037DAB0 /* Main.storyboard in Resources */,
 			);
@@ -498,6 +507,7 @@
 				F055C170286A0BD70037DAB0 /* SceneDelegate.m in Sources */,
 				F055C1D0286BB6990037DAB0 /* ProfileViewController.m in Sources */,
 				F055C1C7286B5CB40037DAB0 /* DetailsView.m in Sources */,
+				F055C1E1286D15C70037DAB0 /* FeedHeaderView.m in Sources */,
 				F055C1BA286A2CAA0037DAB0 /* Post.m in Sources */,
 				F055C1CD286B7E030037DAB0 /* FeedTableViewController.m in Sources */,
 			);

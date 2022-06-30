@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "FeedCell.h"
 #import "Parse/Parse.h"
+#import "FeedHeaderView.h"
 
 @interface FeedTableViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
@@ -26,7 +27,8 @@
     self.feedTableView.delegate = self;
     self.feedTableView.rowHeight = UITableViewAutomaticDimension;
     
-    [self.feedTableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"FeedHeaderView"];
+    UINib *headerNib = [UINib nibWithNibName:@"FeedHeaderView" bundle:nil];
+    [self.feedTableView registerNib:headerNib forHeaderFooterViewReuseIdentifier:@"FeedHeaderView"];
 
     // Refresh setup
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -110,19 +112,23 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"FeedHeaderView"];
+    FeedHeaderView *header = (FeedHeaderView *) [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"FeedHeaderView"];
     Post *post = [Post postFromPFObject:self.arrayOfPosts[section]];
                   
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMM yyyy"];
     NSString *stringFromDate = [formatter stringFromDate:post.timestamp];
     
-    NSString *userString = [post.author.username stringByAppendingString:@" - "];
-    
-    [header.textLabel setNumberOfLines:0];
-    [header.textLabel setLineBreakMode:NSLineBreakByWordWrapping];
-    header.textLabel.text = [userString stringByAppendingString:stringFromDate];
-    
+    header.usernameLabel.text = post.author.username;
+    header.dateLabel.text = stringFromDate;
+    header.profilePictureView.layer.cornerRadius = 0.5*header.profilePictureView.frame.size.width;
+    header.profilePictureView.clipsToBounds = YES;
+    PFFileObject *profileImg = post.author[@"profileImage"];
+    [profileImg getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (data) {
+            header.profilePictureView.image = [UIImage imageWithData:data];
+        }
+    }];
     return header;
 }
 
