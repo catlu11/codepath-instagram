@@ -34,18 +34,19 @@ The following **optional** features are implemented:
 - [ ] Implement a custom camera view
 
 The following **additional** features are implemented:
-n/a
+- Custom section headers to display username/creation time for each post
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Better database design for likes, comments, etc.
+2. Better methods for updating views that can improve loading speed.
 
 ## Video Walkthrough
-The first video shows a quick demo of the app's required features. The second demonstrates user persistence after app restarts.
+The first video shows a quick demo of the app's required features. The second demonstrates user persistence after app restarts. The third demonstrates all completed stretch features.
 <p float="left">
 <img src='Demo/instagram1.gif' title='Video Walkthrough' alt='Video Walkthrough' width='200'/>
 <img src='Demo/instagram2.gif' title='Persistence Walkthrough' alt='Persistence Walkthrough' width='200'/> 
+<img src='Demo/instagram3.gif' title='Stretch Walkthrough' alt='Stretch Walkthrough' width='200'/> 
 </p>
 
 ## Credits
