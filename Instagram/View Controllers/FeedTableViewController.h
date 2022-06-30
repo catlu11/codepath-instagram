@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FeedTableViewController : UIViewController
-@property (strong, nonatomic) PFUser *forUser;
+@property (strong, nonatomic) PFUser *feedUser;
 -(void)fetchPosts:(BOOL *)isMore;
 @end
 

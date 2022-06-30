@@ -7,6 +7,7 @@
 
 #import "FeedTableViewController.h"
 #import "DetailsViewController.h"
+#import "ProfileViewController.h"
 #import "FeedCell.h"
 #import "Parse/Parse.h"
 #import "FeedHeaderView.h"
@@ -46,8 +47,8 @@
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"createdAt < %@", lastPost.createdAt];
         query = [PFQuery queryWithClassName:@"Post" predicate:predicate];
     }
-    if (self.forUser) {
-        [query whereKey:@"author" equalTo:self.forUser];
+    if (self.feedUser) {
+        [query whereKey:@"author" equalTo:self.feedUser];
     }
     [query includeKey:@"image"];
     [query includeKey:@"author"];
@@ -129,7 +130,21 @@
             header.profilePictureView.image = [UIImage imageWithData:data];
         }
     }];
+    
+    header.user = post.author;
+    UITapGestureRecognizer *profileTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapProfileHeader:)];
+    [header addGestureRecognizer:profileTapGesture];
     return header;
+}
+
+- (void) tapProfileHeader:(UITapGestureRecognizer *)tapGesture {
+    FeedHeaderView *parentView = tapGesture.view;
+    UINavigationController *navigationController = self.navigationController;
+    ProfileViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+    viewController.feedUser = parentView.user;
+    viewController.view;
+    [viewController updateUI];
+    [navigationController pushViewController: viewController animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

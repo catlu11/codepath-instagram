@@ -18,11 +18,21 @@
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
-    self.forUser = [PFUser currentUser];
+    [self updateUI];
     [super viewDidLoad];
+}
+
+- (void) updateUI {
+    if(self.feedUser == nil) {
+        self.feedUser = [PFUser currentUser];
+        [self.profileImageView setUserInteractionEnabled:YES];
+    }
+    else {
+        [self.profileImageView setUserInteractionEnabled:NO];
+    }
     
-    self.usernameLabel.text = self.forUser.username;
-    PFFileObject *profileImg = self.forUser[@"profileImage"];
+    self.usernameLabel.text = self.feedUser.username;
+    PFFileObject *profileImg = self.feedUser[@"profileImage"];
     [profileImg getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (data) {
             self.profileImageView.image = [UIImage imageWithData:data];
@@ -37,7 +47,6 @@
     
     UITapGestureRecognizer *profileTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapProfilePicture)];
     [self.profileImageView addGestureRecognizer:profileTap];
-    [self.profileImageView setUserInteractionEnabled:YES];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -59,8 +68,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void) tapProfilePicture {
-    NSLog(@"tapping");
+- (void) tapProfilePicture {
     self.imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:self.imagePickerVC animated:YES completion:nil];
 }
